@@ -195,3 +195,5 @@ Northwestern University
 
 MS in Data Science (AI specialization)
 
+Contact email -choudharypratibha.purdue@gmail.com
+
