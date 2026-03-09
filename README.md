@@ -1,8 +1,9 @@
 # AML-venetoclax-response-AI-Capstone-2026
 
-AI Prediction of Venetoclax Response and Safety in Acute Myeloid Leukemia (AML)
+# AI Prediction of Venetoclax Response and Safety in Acute Myeloid Leukemia (AML)
+Dr. Pratibha Choudhary (March 2026)
 
-Project Overview
+# Project Overview
 
 Acute Myeloid Leukemia (AML) is an aggressive blood cancer with highly variable patient outcomes. Venetoclax (Venclexta), a targeted BCL-2 inhibitor developed by AbbVie, has improved treatment options for many AML patients, but not all individuals respond to therapy.
 This project develops an AI-based predictive modeling framework that uses patient molecular data to estimate:
@@ -10,7 +11,7 @@ This project develops an AI-based predictive modeling framework that uses patien
 2.	Safety-related risk proxy derived from clinical AML risk stratification
 The goal is to explore whether multi-omics molecular features can help predict treatment outcomes before therapy begins, supporting biomarker discovery and personalized medicine strategies.
 ________________________________________
-Dataset
+# Dataset
 
 This study uses the BeatAML2 harmonized dataset (Bottomly et al., 2022), one of the largest publicly available functional genomics resources for AML.
 The dataset integrates multiple molecular modalities for AML patients:
@@ -24,22 +25,22 @@ After preprocessing and feature integration, the modeling cohort included approx
 •	309 samples for WGCNA module features
 •	367 samples for pathway signature features
 ________________________________________
-Feature Engineering
+# Feature Engineering
 
 To reduce dimensionality and improve biological interpretability, several transcriptomic feature representations were compared.
-1. Gene-Level Representation
+# 1. Gene-Level Representation
 Genes200
 A subset of 200 informative gene expression features combined with:
 •	AML cell-state scores (6 programs)
 •	Binary mutation panel (Mut50)
 
-2. WGCNA Co-expression Modules
+# 2. WGCNA Co-expression Modules
    
 WGCNA_PC1(14)
 Gene expression was summarized using 14 module eigengenes, representing coordinated transcriptional programs.
 This approach reduces thousands of genes into a smaller set of biologically meaningful features.
 
-3. Pathway / Signature Programs
+# 3. Pathway / Signature Programs
    
 Five biologically interpretable pathway scores were computed:
 •	Monocytic differentiation
@@ -48,7 +49,7 @@ Five biologically interpretable pathway scores were computed:
 •	Oxidative phosphorylation (OXPHOS)
 •	Glycolysis
 
-4. RF8 Literature Gene Panel
+# 4. RF8 Literature Gene Panel
    
 A compact 8-gene signature (RF8) proposed by Jin et al. (2025) was evaluated as a benchmark biomarker panel.
 RF8 genes:
@@ -67,7 +68,7 @@ RF8 variants tested:
 •	RF8 + CellTypes + Mut50
 ________________________________________
 
-Machine Learning Models
+# Machine Learning Models
 
 Logistic Regression (Baseline)
 Logistic regression was used as the primary baseline model because it:
@@ -76,7 +77,7 @@ Logistic regression was used as the primary baseline model because it:
 •	produces coefficients linked to biological hypotheses
 ________________________________________
 
-Multitask Neural Network
+# Multitask Neural Network
 
 A two-head multitask neural network was implemented in PyTorch to jointly predict:
 •	Venetoclax response
@@ -87,7 +88,7 @@ The architecture includes:
 This design allows the model to learn shared biological signals between related tasks.
 ________________________________________
 
-Model Evaluation
+# Model Evaluation
 
 All models were evaluated using:
 5-fold stratified cross-validation
@@ -96,7 +97,7 @@ Metrics reported:
 •	AUPRC – performance under class imbalance
 ________________________________________
 
-Key Results
+# Key Results
 
 Response Prediction Performance
 Model	AUROC
@@ -107,7 +108,7 @@ RF8 + CellTypes	~0.86
 Multitask Neural Network	~0.89
 ________________________________________
 
-Safety Proxy Prediction
+# Safety Proxy Prediction
 
 Model	AUROC
 Genes200 + CellTypes + Mut50	~0.82
@@ -117,7 +118,7 @@ RF8 + CellTypes + Mut50	~0.80
 Multitask Neural Network	~0.86
 ________________________________________
 
-Biological Insights
+# Biological Insights
 
 Model interpretation revealed important biological signals linked to Venetoclax response:
 •	Monocytic differentiation programs associated with reduced drug response
@@ -127,7 +128,7 @@ Model interpretation revealed important biological signals linked to Venetoclax 
 These findings align with prior AML studies linking cell differentiation state to Venetoclax resistance.
 ________________________________________
 
-Project Structure
+# Project Structure
 project/
 │
 ├── notebooks/
@@ -147,7 +148,7 @@ project/
 └── README.md
 ________________________________________
 
-Example Visualizations
+# Example Visualizations
 
 The project includes several model evaluation figures:
 •	ROC curves for response prediction
@@ -158,7 +159,7 @@ The project includes several model evaluation figures:
 •	Feature importance analyses
 ________________________________________
 
-Potential Applications
+# Potential Applications
 
 This project demonstrates how multi-omics AI models may support:
 •	treatment response prediction
@@ -167,7 +168,7 @@ This project demonstrates how multi-omics AI models may support:
 •	precision oncology decision support
 ________________________________________
 
-Technologies Used
+# Technologies Used
 
 •	Python
 •	Pandas
@@ -177,7 +178,7 @@ Technologies Used
 •	Jupyter Notebook
 ________________________________________
 
-References
+# References
 
 Bottomly D. et al. (2022)
 Integrative analysis of drug response and clinical outcome in AML.
@@ -187,7 +188,7 @@ Jin et al. (2025)
 RF8 gene panel for Venetoclax response prediction.
 ________________________________________
 
-Author
+# Author
 
 Dr. Pratibha Choudhary
 
@@ -196,4 +197,5 @@ Northwestern University
 MS in Data Science (AI specialization)
 
 Contact email -choudharypratibha.purdue@gmail.com
+Linkedln- www.linkedin.com/in/pratibha-choudhary-ph-d-bio
 
